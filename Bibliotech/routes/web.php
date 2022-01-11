@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//LOGIN
+Route::get('/login', [UserController::class, 'createPage'])->middleware('guest')->name('login');
+Route::post('/login', [UserController::class, 'storeSession']);
+Route::post('/logout', [UserController::class, 'destroySession']);
+
+//REGISTER
+Route::get('/register', [UserController::class, 'createPage'])->middleware('guest');
+Route::post('/register', [UserController::class, 'storeUser']);
+
+//BORROW
 Route::get('/borrow', function () {
     return view('borrow');
 });
