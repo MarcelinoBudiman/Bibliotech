@@ -11,11 +11,17 @@
     @php
         $user = auth()->user();
     @endphp
-    @if ($user->role == "User")
-        @yield('user-nav')
+
+    @if (Auth::check())
+        @if ($user->role == "User")
+            @include('user.nav')
+        @else
+            @include('admin.nav')
+        @endif
     @else
-        @yield('admin-nav')
+        @include('guest.nav')
     @endif
+
 
     <div class="container">
         @yield('body')

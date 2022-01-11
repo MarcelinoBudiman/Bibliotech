@@ -1,11 +1,7 @@
-@extends('template')
-
-@section('admin-nav')
-
-<nav class="navbar navbar-expand-md navbar-dark justify-content-center" style="background-color: {{PRIMARY_COLOR}};">
+<nav class="navbar navbar-expand-md navbar-dark justify-content-center" style="background-color: #D2FAEE;">
         <div class="container-fluid">
-            <a class="navbar-brand me-auto p-2 bd-highlight" href="#">JH Furniture</a>
-            <ul class="navbar-nav ms-auto">
+            <a class="navbar-brand me-auto p-2 bd-highlight" href="#">Bibliotech</a>
+            <ul class="navbar-nav ms-auto" style="color: #2CA19A">
                 <li class="nav-item">
                     <a class="nav-link" href="/home">Home</a>
                 </li>
@@ -20,5 +16,3 @@
                 </li>
             </ul>
     </nav>
-
-@endsection
