@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,9 @@ Route::post('/logout', [UserController::class, 'destroySession']);
 //REGISTER
 Route::get('/register', [UserController::class, 'createPage'])->middleware('guest');
 Route::post('/register', [UserController::class, 'storeUser']);
+
+//HOME
+Route::get('/home', [BookController::class, 'createHomePage']);
 
 //BORROW
 Route::get('/borrow', function () {

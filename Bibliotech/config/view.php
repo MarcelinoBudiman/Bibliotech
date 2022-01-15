@@ -1,5 +1,7 @@
 <?php
 
+define('PRIMARY_COLOR', '#2CA19A');
+
 return [
 
     /*
