@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,12 +20,12 @@ Route::get('/', function () {
 });
 
 //LOGIN
-Route::get('/login', [UserController::class, 'createPage'])->middleware('guest')->name('login');
+Route::get('/login', [UserController::class, 'createLoginPage'])->middleware('guest')->name('login');
 Route::post('/login', [UserController::class, 'storeSession']);
 Route::post('/logout', [UserController::class, 'destroySession']);
 
 //REGISTER
-Route::get('/register', [UserController::class, 'createPage'])->middleware('guest');
+Route::get('/register', [UserController::class, 'createRegisterPage'])->middleware('guest');
 Route::post('/register', [UserController::class, 'storeUser']);
 
 //HOME
