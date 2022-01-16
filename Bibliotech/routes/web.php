@@ -42,3 +42,8 @@ Route::delete('delete-book/{id}', [BookController::class, 'deleteBook']);
 Route::get('/borrow', function () {
     return view('borrow');
 });
+
+//AboutUs
+Route::get('/about-us', function () {
+    return view('about_us');
+});

@@ -12,7 +12,7 @@
                     <a class="nav-link" href="#">Order Queue</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About US</a>
+                    <a class="nav-link" href="/about-us">About US</a>
                 </li>
             </ul>
     </nav>
