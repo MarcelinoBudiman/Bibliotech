@@ -33,7 +33,7 @@
                                         <button class="btn btn-danger">Delete</button>
                                     </form>
                                 @else
-                                    <a href="{{$user ? '/add-to-cart/'.$b->id : '/login'}}" class="btn btn-light col col-sm-8" style="color: {{PRIMARY_COLOR}}">Add to Cart</a>
+                                    <a href="{{$user ? '/cart/'.$b->id : '/login'}}" class="btn btn-light col col-sm-8" style="color: {{PRIMARY_COLOR}}">Add to Cart</a>
                                 @endif
                             </div>
                         </div>

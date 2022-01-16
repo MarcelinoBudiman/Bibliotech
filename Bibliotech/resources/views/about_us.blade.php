@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="m-5" >
-        <div style="height:20px;">
 
-        </div>
     </div>
     <div class="m-5">
         <div class="card">
-            <h2 class="card-header text-center text-white " style="background-color: #278d87;" >
+            <h2 class="card-header text-center text-white " style="background-color: {{PRIMARY_COLOR}};" >
                 About Us
             </h2>
             <div class="card-body" >
@@ -23,7 +21,7 @@
         </div>
         <div class="card mt-3">
             <img class="card-img-top" src="https://i.ytimg.com/vi/oTz93Y-qeq0/maxresdefault.jpg" alt="Card image cap">
-            <h2 class="card-header text-center text-white " style="background-color: #278d87;" >
+            <h2 class="card-header text-center text-white " style="background-color:{{PRIMARY_COLOR}};" >
                 People
             </h2>
             <div class="card-body" >
@@ -36,10 +34,10 @@
         <div class="card mt-3">
 
             <div class="card-body text-center text-decoration: none;" >
-                <i class="fa fa-instagram m-2 " style="font-size:28px;color:#278d87"></i>
-                <i class="fa fa-twitter m-2" style="font-size:28px;color:#278d87"></i>
-                <i class="fa fa-facebook m-2" style="font-size:28px;color:#278d87"></i>
-                <i class="fa fa-youtube m-2" style="font-size:28px;color:#278d87"></i>
+                <i class="fa fa-instagram m-2 " style="font-size:28px;color:{{PRIMARY_COLOR}}"></i>
+                <i class="fa fa-twitter m-2" style="font-size:28px;color:{{PRIMARY_COLOR}}"></i>
+                <i class="fa fa-facebook m-2" style="font-size:28px;color:{{PRIMARY_COLOR}}"></i>
+                <i class="fa fa-youtube m-2" style="font-size:28px;color:{{PRIMARY_COLOR}}"></i>
             </div>
         </div>
     </div>

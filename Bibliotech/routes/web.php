@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +48,7 @@ Route::get('/borrow', function () {
 Route::get('/about-us', function () {
     return view('about_us');
 });
+
+//CART
+Route::get('/cart',[CartController::class,'createCartPage']);
+Route::get('/cart/{id}',[CartController::class,'addToCart']);
