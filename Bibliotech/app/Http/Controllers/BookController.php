@@ -48,11 +48,12 @@ class BookController extends Controller
 
     public function insertBook(Request $request){
         $validator = Validator::make($request->all(),[
-            'title' => 'unique:furnitures,name|required',
+            'title' => 'unique:books,title|required',
             'author' => 'required',
             'publisher' => 'required',
-            'release' => 'required',
+            'release' => 'numeric|required|digits:4',
             'price' => 'numeric|required',
+            'description' => 'required',
             'image' => 'image|mimes:jpg,jpeg,png|required'
         ]);
 
@@ -65,6 +66,7 @@ class BookController extends Controller
         $book->author = $request->author;
         $book->publisher = $request->publisher;
         $book->price = $request->price;
+        $book->release = $request->release."-01-01";
         $book->description = $request->description;
 
         $file = $request->file('image');
@@ -79,11 +81,12 @@ class BookController extends Controller
     public function updateBook(Request $request, $id){
 
         $validator = Validator::make($request->all(),[
-            'title' => ['required', Rule::unique('furnitures')->ignore($id)],
+            'title' => ['required', Rule::unique('books')->ignore($id)],
             'author' => 'required',
             'publisher' => 'required',
             'release' => 'required',
             'price' => 'numeric|required',
+            'description' => 'required',
             'image' => 'image|mimes:jpg,jpeg,png|nullable'
         ]);
 
@@ -97,6 +100,7 @@ class BookController extends Controller
             $book->author = ($request->author != null) ? $request->author : $book->author;
             $book->publisher = ($request->publisher != null) ? $request->publisher : $book->publisher;
             $book->price = ($request->price != null) ? $request->price : $book->price;
+            $book->release = ($request->release != null) ? $request->release."-01-01" : $book->release;
             $book->description = ($request->description != null) ? $request->description : $book->description;
 
             $file = $request->file('image');

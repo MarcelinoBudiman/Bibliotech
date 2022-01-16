@@ -1,5 +1,9 @@
 @extends('template')
 
+@php
+    $user = auth()->user();
+@endphp
+
 @section('body')
 
     <div class="container-fluid mt-4">
@@ -21,7 +25,7 @@
                             <h5 class="card-title text-white">{{$b->title}}</h5>
                             <p class="text-white">Rp.{{number_format($b->price,0,',','.')}}</p>
                             <div class="row justify-content-around">
-                                {{-- @if ($user!=null && $user->role == 'Admin')
+                                @if ($user!=null && $user->role == 'Admin')
                                     <a href="/update-furniture-page/{{$b->id}}" class="btn btn-success col col-sm-4">Update</a>
                                     <form action="/delete-furniture/{{$b->id}}" method="POST" class="d-inline col col-sm-4">
                                         {{method_field('delete')}}
@@ -30,7 +34,7 @@
                                     </form>
                                 @else
                                     <a href="{{$user ? '/add-to-cart/'.$b->id : '/login'}}" class="btn btn-light col col-sm-8" style="color: {{PRIMARY_COLOR}}">Add to Cart</a>
-                                @endif --}}
+                                @endif
                             </div>
                         </div>
                     </div>

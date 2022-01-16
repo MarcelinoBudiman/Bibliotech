@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BookController::class, 'createHomePage']);
 
 //LOGIN
 Route::get('/login', [UserController::class, 'createLoginPage'])->middleware('guest')->name('login');
@@ -35,10 +33,10 @@ Route::get('/search', [BookController::class, 'searchBook']);
 //BOOK
 Route::get('detail/{id}', [BookController::class, 'createDetailPage']);
 Route::get('add-book-page', [BookController::class, 'createAddPage']);
-Route::get('add-book', [BookController::class, 'insertBook']);
+Route::post('add-book', [BookController::class, 'insertBook']);
 Route::get('update-book-page/{id}', [BookController::class, 'createUpdatePage']);
-Route::get('update-page/{id}', [BookController::class, 'updateBook']);
-Route::get('delete-book/{id}', [BookController::class, 'deleteBook']);
+Route::post('update-book/{id}', [BookController::class, 'updateBook']);
+Route::delete('delete-book/{id}', [BookController::class, 'deleteBook']);
 
 //BORROW
 Route::get('/borrow', function () {
