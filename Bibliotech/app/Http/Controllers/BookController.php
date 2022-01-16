@@ -41,8 +41,7 @@ class BookController extends Controller
 
     public function searchBook(Request $request){
         $search_query = $request->query('q');
-        $data = Book::where('title', "LIKE", "%$search_query")->paginate(4);
-
+        $data = Book::where('title', "LIKE", "%$search_query%")->paginate(4);
         return view('home')->with('books', $data)->with('q', $search_query);
     }
 
@@ -75,6 +74,7 @@ class BookController extends Controller
         $book->image = $imageName;
         $book->save();
 
+        session()->flash('message', 'Book successfully added!');
         return redirect()->back();
     }
 
@@ -115,6 +115,7 @@ class BookController extends Controller
             $book->save();
         }
 
+        session()->flash('message', 'Update Successful!');
         return redirect()->back();
     }
 
@@ -125,9 +126,11 @@ class BookController extends Controller
             Storage::delete('public/images/'.$book->image);
             $book->delete();
 
+            session()->flash('message', 'Book successfully deleted!');
             return redirect('home');
         }
 
+        session()->flash('message', "Book doesn't exist!");
         return redirect()->back();
     }
 
