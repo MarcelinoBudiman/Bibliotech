@@ -10,7 +10,7 @@
                     <a class="nav-link" href="/add-book-page">Add Book</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Queue</a>
+                    <a class="nav-link" href="/library">Order Queue</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About US</a>

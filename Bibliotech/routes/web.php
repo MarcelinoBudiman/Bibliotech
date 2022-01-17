@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\QueueController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\QueueController;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//LIBRARY
+Route::get('/library', [LibraryController::class, 'createLibraryPage']);
+
+//QUEUE
+Route::get('/addtoqueue/{userId}/{libraryId}', [QueueController::class, 'createQueue']);
+
 
 Route::get('/', [BookController::class, 'createHomePage']);
 
@@ -46,13 +54,6 @@ Route::get('/borrow', function () {
     return view('borrow');
 });
 
-//LIBRARY 
-Route::get('/library', [LibraryController::class, 'createLibraryPage']);
-
-//QUEUE
-Route::get('/addtoqueue/{userId}/{libraryId}', [QueueController::class, 'createQueue']);
-
-
 //AboutUs
 Route::get('/about-us', function () {
     return view('about_us');
@@ -61,3 +62,8 @@ Route::get('/about-us', function () {
 //CART
 Route::get('/cart',[CartController::class,'createCartPage']);
 Route::get('/cart/{id}',[CartController::class,'addToCart']);
+Route::get('/checkout',[CartController::class,'createCheckoutPage']);
+
+//HISTORY
+Route::get('/history',[TransactionController::class,'viewHistory']);
+Route::post('/addTransaction',[TransactionController::class,'addTransaction']);

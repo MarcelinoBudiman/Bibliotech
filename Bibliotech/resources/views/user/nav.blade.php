@@ -10,7 +10,7 @@
                     <a class="nav-link" href="/cart">Borrow</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Order Queue</a>
+                    <a class="nav-link" href="/library">Order Queue</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About US</a>
