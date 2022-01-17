@@ -9,6 +9,9 @@ class Queue extends Model
 {
     use HasFactory;
 
+    protected $table = "Queue";
+    public $timestamps = false;
+
     public function Library()
     {
         return $this->belongsTo(Library::class);

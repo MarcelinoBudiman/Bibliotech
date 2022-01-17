@@ -17,8 +17,5 @@ class Book extends Model
         return $this->belongsTo(Library::class);
     }
 
-    public function Queue()
-    {
-        return $this->belongsToMany(Queue::class);
-    }
+   
 }

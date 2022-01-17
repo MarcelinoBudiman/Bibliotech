@@ -16,6 +16,9 @@ class Library extends Model
         
     ];
 
+    protected $table = "library";
+    
+
     public function Book()
     {
         return $this->hasMany(Book::class);

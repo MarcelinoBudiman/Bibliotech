@@ -16,9 +16,9 @@ class CreateQueueTable extends Migration
         Schema::create('queue', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('library_id')->unsigned();
-            $table->unsignedBigInteger('book_id')->unsigned();
+            $table->unsignedBigInteger('user_id')->unsigned();
             $table->foreign('library_id')->references('id')->on('library')->onDelete('cascade');
-            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

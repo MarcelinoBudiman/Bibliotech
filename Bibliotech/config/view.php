@@ -1,6 +1,9 @@
 <?php
 
 define('PRIMARY_COLOR', '#2CA19A');
+define('MONOCHROMATIC_COLOR', '#408782');
+define('COMPLEMENTARY_COLOR', '#a1472c');
+
 
 return [
 

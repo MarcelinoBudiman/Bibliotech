@@ -3,6 +3,8 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\QueueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [BookController::class, 'createHomePage']);
 
 //LOGIN
 Route::get('/login', [UserController::class, 'createLoginPage'])->middleware('guest')->name('login');
@@ -31,6 +31,15 @@ Route::post('/register', [UserController::class, 'storeUser']);
 
 //HOME
 Route::get('/home', [BookController::class, 'createHomePage']);
+Route::get('/search', [BookController::class, 'searchBook']);
+
+//BOOK
+Route::get('detail/{id}', [BookController::class, 'createDetailPage']);
+Route::get('add-book-page', [BookController::class, 'createAddPage']);
+Route::post('add-book', [BookController::class, 'insertBook']);
+Route::get('update-book-page/{id}', [BookController::class, 'createUpdatePage']);
+Route::post('update-book/{id}', [BookController::class, 'updateBook']);
+Route::delete('delete-book/{id}', [BookController::class, 'deleteBook']);
 
 //BORROW
 Route::get('/borrow', function () {
@@ -40,5 +49,15 @@ Route::get('/borrow', function () {
 //LIBRARY 
 Route::get('/library', [LibraryController::class, 'createLibraryPage']);
 
+//QUEUE
+Route::get('/addtoqueue/{userId}/{libraryId}', [QueueController::class, 'createQueue']);
 
 
+//AboutUs
+Route::get('/about-us', function () {
+    return view('about_us');
+});
+
+//CART
+Route::get('/cart',[CartController::class,'createCartPage']);
+Route::get('/cart/{id}',[CartController::class,'addToCart']);

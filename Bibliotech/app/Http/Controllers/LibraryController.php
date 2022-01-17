@@ -9,9 +9,9 @@ class LibraryController extends Controller
 {
     //
     public function createLibraryPage(){
-        $library = Library::paginate(4);
+        $libraries = Library::paginate(4);
         return view('queue') 
-        ->with('library',$library)
+        ->with('libraries',$libraries)
         ;
  
     }

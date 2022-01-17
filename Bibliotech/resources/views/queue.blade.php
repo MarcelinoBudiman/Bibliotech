@@ -1,5 +1,10 @@
 @extends('template')
 
+
+@php
+    $user = auth()->user();
+@endphp
+
 @section('body')
 
 <div class="container">
@@ -15,18 +20,33 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header "></div>
-                <div class="card-body d-flex " style="background-color: #0dcaf0">
+                <div class="card-body d-flex " style="background-color: {{PRIMARY_COLOR}}">
 
-                    @foreach($library as $library)
+                    @foreach($libraries as $lib)
 
-                    <div>
-                        {{$library->name}}
-                    </div>
-                    <div>
-                        {{$library->address}}
-                    </div>
-                    <div>
-                     {{$library->Queue->count}}   / {{$library->capacity}}
+                    <div class="col-3">
+
+                        <div class="card m-3">
+
+                            <div>
+                                {{$lib->name}}
+                            </div>
+                            <div>
+                                {{$lib->address}}
+                            </div>
+                            <div>
+                                {{count($lib->Queue)}} / {{$lib->capacity}}
+                            </div>
+
+                        </div>
+
+
+                        <a type="button" class="btn btn-success " style="margin-left: 5rem;" href="addtoqueue/{{$user->id}}/{{$lib->id}}">
+                              join
+                         </a>
+
+
+
                     </div>
 
                     @endforeach
