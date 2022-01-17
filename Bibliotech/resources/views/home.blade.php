@@ -19,7 +19,7 @@
         <div class="row mt-4">
             @forelse ($books as $b)
                 <div class="col-md-3 mt-2">
-                    <div class="card shadow" style="background-color: {{PRIMARY_COLOR}};">
+                    <div class="card h-100 shadow" style="background-color: {{PRIMARY_COLOR}};">
                         <a href="/detail/{{$b->id}}"><img class="card-img-top" style="width: 100%; height: 300px; object-fit: cover;" src="{{Storage::url('images/'.$b->image)}}" alt="{{$b->title}}"></a>
                         <div class="card-body text-center">
                             <h5 class="card-title text-white">{{$b->title}}</h5>
