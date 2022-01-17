@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Book as Books;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -11,6 +11,9 @@ class CartController extends Controller
         return view('cart');
     }
 
+    public function createCheckoutPage(){
+        return view('checkout');
+    }
     public function addToCart($id){
         $books = Books::find($id);
 
@@ -25,9 +28,9 @@ class CartController extends Controller
                 $id => [
                     "title" => $books->title,
                     "author" => $books->author,
-                    "price" => $books->price
-//                    "price" => $furnitures->price,
-//                    "image" => Storage::url('public/'.$furnitures->image)
+                    "price" => $books->price,
+                    "image" => Storage::url('public/images/'.$books->image),
+
                 ]
             ];
             session()->put('cart', $cart);
@@ -38,7 +41,8 @@ class CartController extends Controller
         $cart[$id] = [
             "title" => $books->title,
             "author" => $books->author,
-            "price" => $books->price
+            "price" => $books->price,
+            "image" => Storage::url('public/images/'.$books->image)
         ];
 
         session()->put('cart', $cart);

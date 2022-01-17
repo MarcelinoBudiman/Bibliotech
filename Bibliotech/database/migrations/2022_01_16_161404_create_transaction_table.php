@@ -19,6 +19,7 @@ class CreateTransactionTable extends Migration
             $table->date('borrow_date');
             $table->date('return_date');
             $table->string('payment_method');
+            $table->string('card_number');
             $table->string('name');
             $table->string('total_price');
             $table->timestamps();
