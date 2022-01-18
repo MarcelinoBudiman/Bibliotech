@@ -15,14 +15,15 @@ class QueueController extends Controller
         $newQueue->library_id = $libraryId;
         $newQueue->user_id = $userId;
 
-        $temp = null;
-        $temp = Queue::where("user_id",$userId)->get();
-        if($temp == null){
+        // $temp = null;
+        // $temp = Queue::where("user_id",$userId)->get();
+        
+        // if($temp == null){
             $newQueue->save();
 
-        }
+        // }
 
-        return view('queue')
+        return redirect('/library')
         ->with('libraries',$libraries)
         ;
  

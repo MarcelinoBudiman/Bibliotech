@@ -9,15 +9,44 @@
 
 @section('body')
 
+</script>
+
 <div class="container">
 
     <div class="row justify-content-center">
 
         <div class="text-center title m-5">
             Library Onsite Daily Queue
-            
-        </div>
+         
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ticket</h5>
+   
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      @if($user && $user->id &&  $user->Queue && $user->Queue->id)
+      <div class="modal-body">
+
+         
+      This is your code for going into the library today! LiB{{$user->id}}{{$user->Queue->id}}
+
+      
+      </div>
+      @endif
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+     
 
         <div class="col-md-10">
             <div class="card">
@@ -28,24 +57,35 @@
 
                     <div class="col-3">
 
-                        <div class="card m-3">
+                        <div class="card m-3" style="padding-left:1rem">
 
                             <div>
                                 {{$lib->name}}
                             </div>
                             <div>
-                                {{$lib->address}}
+                                Address: {{$lib->address}}
                             </div>
                             <div>
-                                {{count($lib->Queue)}} / {{$lib->capacity}}
+                                Capacity : {{count($lib->Queue)}} / {{$lib->capacity}}
                             </div>
 
                         </div>
 
-
-                        <a type="button" class="btn btn-success " style="margin-left: 5rem;" href="addtoqueue/{{$user->id}}/{{$lib->id}}">
+                        @if($user->Queue==null)
+                            <a type="button" class="btn btn-success"  style="margin-left: 5rem;" href="addtoqueue/{{$user->id}}/{{$lib->id}}">
                               join
                          </a>
+                        @elseif($user->Queue->library_id == $lib->id)
+
+                            <button type="button" class="btn btn-success "
+                         style="margin: 3rem;" data-toggle="modal" data-target="#exampleModal">
+                            Check Ticket
+                         </button>
+                        
+                        @endif
+                       
+                        
+                 
 
 
 
@@ -54,6 +94,18 @@
                     @endforeach
 
                 </div>
+
+                @if (!empty($libraries))
+            <div class="row my-4 justify-content-center">
+                <nav class="col-md-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item"><a  style="color: {{PRIMARY_COLOR}}; text-decoration: none;" href="{{$libraries->previousPageUrl()}}"><< Previous</a></li>
+                        <span class="mx-2"></span>
+                        <li class="page-item"><a  style="color: {{PRIMARY_COLOR}}; text-decoration: none;" href="{{$libraries->nextPageUrl()}}">Next >></a></li>
+                    </ul>
+                </nav>
+            </div>
+        @endif
             </div>
         </div>
 
@@ -72,7 +124,9 @@
 
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
 
