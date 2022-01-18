@@ -32,7 +32,7 @@
                                     {{ $book['author'] }}
                                 </td>
                                 <td>
-                                    Rp.{{ $book['price'] }}
+                                    Rp {{number_format($book['price'],0,',','.')}}
                                 </td>
                             </tr>
                         @endforeach
@@ -54,7 +54,7 @@
 
                             </td>
                             <td class="ms-2">
-                                Total price Rp.{{$total}}
+                                Total price Rp {{number_format($total,0,',','.')}}
                             </td>
 
                         </tr>

@@ -18,7 +18,7 @@
                                 <div>Return Date : {{$tr->return_date}}</div>
                                 <div>Payment Method : {{$tr->payment_method}}</div>
                                 <div>Card Number : {{$tr->card_number}}</div>
-                                <div>Total Price : {{$tr->total_price}}</div>
+                                <div>Total Price : Rp {{number_format($tr->total_price,0,',','.')}}</div>
                                 <table class="table">
                                     <thead>
                                     <tr>
@@ -34,9 +34,9 @@
                                             <tr>
                                                 <td>{{$trd->title}}</td>
                                                 <td>{{$trd->author}}</td>
-                                                <td>{{$trd->price}}</td>
+                                                <td>Rp {{number_format($trd->price,0,',','.')}}</td>
                                                 <td>
-                                                    <img src="{{Storage::url('public/images/'.$trd->image)}}" width="70" height="100" class="img-responsive "/>
+                                                    <img src="{{$trd->image}}" width="70" height="100" class="img-responsive "/>
                                                 </td>
                                             </tr>
                                         @endif
@@ -44,7 +44,7 @@
                                     </tbody>
 
                                 </table>
-                                <div>Total price : {{$tr->total_price}}</div>
+                                <div>Total price : Rp {{number_format($tr->total_price,0,',','.')}}</div>
                             </div>
                         </div>
                     @endforeach
@@ -59,7 +59,7 @@
                                     <div>Return Date : {{$tr->return_date}}</div>
                                     <div>Payment Method : {{$tr->payment_method}}</div>
                                     <div>Card Number : {{$tr->card_number}}</div>
-                                    <div>Total Price : {{$tr->total_price}}</div>
+                                    <div>Total Price : Rp {{number_format($tr->total_price,0,',','.')}}</div>
                                     <table class="table">
                                         <thead>
                                         <tr>
@@ -75,7 +75,7 @@
                                                 <tr>
                                                     <td>{{$trd->title}}</td>
                                                     <td>{{$trd->author}}</td>
-                                                    <td>{{$trd->price}}</td>
+                                                    <td>Rp {{number_format($trd->price,0,',','.')}}</td>
                                                     <td>
                                                         <img src="{{$trd->image}}" width="70" height="100" class="img-responsive "/>
                                                     </td>
@@ -86,7 +86,7 @@
                                         </tbody>
 
                                     </table>
-                                    <div>Total price : {{$tr->total_price}}</div>
+                                    <div>Total price : Rp {{number_format($tr->total_price,0,',','.')}}</div>
                                 </div>
                             </div>
                         @else
