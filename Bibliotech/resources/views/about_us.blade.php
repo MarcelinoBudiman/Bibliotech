@@ -13,21 +13,23 @@
                 About Us
             </h2>
             <div class="card-body" >
-                <p class="card-text text-center">The red ball sat proudly at the top of the toybox. It had been the last to be played with and anticipated it would be
-                    the next as well. The other toys grumbled beneath. At one time each had held the spot of the red ball, but over time they had sunk deeper
-                    and deeper into the toy box.</p>
+                <p class="card-text text-center">Blibliotech was founded in 2022. Bilibliotech started as a small team consisted of college students taht
+                eager to create a library for the betterment of the human lives. Blibliotech provides a good amount of book selection including the rarest and strangest ones.
+                    Blibliotech mission is to give user a way to borrow books, without the hassle of going to libraries which is nonexistent in small cities, and if it exists
+                    , its usually pretty bad and almost abandoned.
+                </p>
 
             </div>
         </div>
         <div class="card mt-3">
-            <img class="card-img-top" src="https://i.ytimg.com/vi/oTz93Y-qeq0/maxresdefault.jpg" alt="Card image cap">
+            <img class="card-img-top" src="https://cdni.rbth.com/rbthmedia/images/2018.05/article/5b0821d415e9f917c2730963.jpg" alt="Card image cap">
             <h2 class="card-header text-center text-white " style="background-color:{{PRIMARY_COLOR}};" >
                 People
             </h2>
             <div class="card-body" >
-                <p class="card-text text-center">At that moment he had a thought that he'd never imagine he'd consider.
-                    "I could just cheat," he thought, "and that would solve the problem." He tried to move on from the thought but it was persistent.
-                    It didn't want to go away and, if he was honest with himself, he didn't want it to..</p>
+                <p class="card-text text-center">In blibliotech we appreciate people life by providing the best
+                of the best service that we can give. We always delve into the depth of human mind to find the perfect way to provide service to bte applied
+                in our app</p>
 
             </div>
         </div>
