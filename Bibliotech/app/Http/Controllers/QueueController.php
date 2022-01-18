@@ -10,7 +10,7 @@ class QueueController extends Controller
 {
     //
     public function createQueue($userId, $libraryId){
-        $libraries = Library::paginate(8);
+        $libraries = Library::paginate(4);
         $newQueue = new Queue();
         $newQueue->library_id = $libraryId;
         $newQueue->user_id = $userId;

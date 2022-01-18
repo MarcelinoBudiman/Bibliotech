@@ -18,8 +18,8 @@ class LibrarySeeder extends Seeder
         DB::table('library')->insert([
             'name'=>'Toko buku Boy',
             'address'=>'JL. Tolong Banyak Tugas',
-            'capacity' => '10'
-
+            'capacity' => '10',
+            'image'=> 'perpus1.jpg'
         ]); 
     }
 }

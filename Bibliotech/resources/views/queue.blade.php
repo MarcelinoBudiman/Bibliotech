@@ -3,7 +3,7 @@
 
 @php
     $user = auth()->user();
-    
+    $Date = date('d.m.Y');
 @endphp
 
 
@@ -19,6 +19,7 @@
            
             <h1 class="fs-2 text-center mb-8" style="color: {{PRIMARY_COLOR}};">
             Library Onsite Daily Queue 
+            ({{$Date}})
             </h1>
             
          
@@ -63,6 +64,10 @@
 
                         <div class="card m-3" style="padding-left:1rem ">
 
+                        <div>
+                            <img  style="width: 150px; height: 100px; object-fit: contain;" src="{{Storage::url('images/' .$lib->image)}}">
+                        </div>
+                      
                             <div>
                                 <b>
                                 {{$lib->name}}
@@ -90,6 +95,7 @@
                         
                         @endif
                        
+                    
                         
                  
 
