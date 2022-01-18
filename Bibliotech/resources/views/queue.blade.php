@@ -16,7 +16,11 @@
     <div class="row justify-content-center">
 
         <div class="text-center title m-5">
-            Library Onsite Daily Queue
+           
+            <h1 class="fs-2 text-center mb-8" style="color: {{PRIMARY_COLOR}};">
+            Library Onsite Daily Queue 
+            </h1>
+            
          
 
 <!-- Modal -->
@@ -50,17 +54,19 @@
 
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header ">List Library</div>
-                <div class="card-body d-flex " style="background-color: {{PRIMARY_COLOR}}">
+                <div class="card-header " style="color: {{PRIMARY_COLOR}};">List Library</div>
+                <div class="card-body d-flex " style="background-color: {{PRIMARY_COLOR}} ">
 
                     @foreach($libraries as $lib)
 
-                    <div class="col-3">
+                    <div class="col-3" >
 
-                        <div class="card m-3" style="padding-left:1rem">
+                        <div class="card m-3" style="padding-left:1rem ">
 
                             <div>
+                                <b>
                                 {{$lib->name}}
+                                </b>
                             </div>
                             <div>
                                 Address: {{$lib->address}}
