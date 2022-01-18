@@ -3,7 +3,9 @@
 
 @php
     $user = auth()->user();
+    
 @endphp
+
 
 @section('body')
 
@@ -11,15 +13,15 @@
 
     <div class="row justify-content-center">
 
-        <div>
+        <div class="text-center title m-5">
             Library Onsite Daily Queue
+            
         </div>
-
 
 
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header "></div>
+                <div class="card-header ">List Library</div>
                 <div class="card-body d-flex " style="background-color: {{PRIMARY_COLOR}}">
 
                     @foreach($libraries as $lib)
