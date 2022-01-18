@@ -15,6 +15,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About US</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/history">Transaction History</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
