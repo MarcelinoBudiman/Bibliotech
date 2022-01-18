@@ -10,13 +10,13 @@
                     <a class="nav-link" href="/add-book-page">Add Book</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/history">Borrow History</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/library">Order Queue</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about-us">About US</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/history">Transaction History</a>
                 </li>
             </ul>
 
